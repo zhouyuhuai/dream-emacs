@@ -1,0 +1,2 @@
+# dream-emacs
+Personal configuration
