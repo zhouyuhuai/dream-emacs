@@ -5,8 +5,8 @@
 (leaf meow
   :doc "modal editing mode"
   :straight t
-  :hook (after-init-hook . meow-global-mode)
   :require t
+  :global-minor-mode meow-global-mode
   :init
   (defun meow-setup ()
   (setq meow-cheatsheet-layout meow-cheatsheet-layout-qwerty)
