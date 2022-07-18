@@ -50,6 +50,39 @@
   :custom ((auto-revert-interval . 0.1))
   :global-minor-mode global-auto-revert-mode)
 
+(leaf time
+  :tag "builtin"
+  :init (setq display-time-24hr-format  t
+	      display-time-day-and-date t))
+
+(leaf saveplace
+  :tag "builtin"
+  :hook (after-init-hook . save-place-mode))
+
+(leaf delsel
+  :tag "builtin"
+  :hook (after-init-hook . delete-selection-mode))
+
+(leaf so-long
+  :tag "builtin"
+  :hook (after-init-hook . global-so-long-mode))
+
+(leaf hl-line
+  :tag "builtin"
+  :hook (after-init-hook . global-hl-line-mode))
+
+(leaf savehist
+  :tag "builtin"
+  :hook (after-init-hook . savehist-mode)
+  :init (setq enable-recursive-minibuffers t ; Allow commands in minibuffers
+              history-length 1000
+              savehist-additional-variables '(mark-ring
+                                              global-mark-ring
+                                              search-ring
+                                              regexp-search-ring
+                                              extended-command-history)
+              savehist-autosave-interval 300))
+
 (leaf gcmh
   :doc "The gc management"
   :blackout ""
@@ -62,10 +95,6 @@
 (leaf no-littering
   :straight t
   :require t)
-
-(leaf time
-  :init (setq display-time-24hr-format  t
-	          display-time-day-and-date t))
 
 (provide 'dream-core-basic)
 ;;; dream-core-basic.el ends here.
