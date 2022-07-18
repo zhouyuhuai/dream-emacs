@@ -11,3 +11,5 @@
 *.~undo-tree
 /eln-cache
 /straight
+/etc
+/var

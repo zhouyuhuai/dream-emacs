@@ -7,3 +7,6 @@
 
 ;; Load core module
 (leaf dream-core :require t)
+
+;; Load edit module
+(leaf dream-edit :require t)
