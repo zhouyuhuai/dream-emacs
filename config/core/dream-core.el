@@ -5,7 +5,10 @@
 (leaf dream-core-basic :require t)
 
 (leaf company
-  :straight t)
+  :hook after-init-hook
+  :straight t
+  :config
+  (global-company-mode 1))
 
 (provide 'dream-core)
 ;;; dream-core.el ends here.

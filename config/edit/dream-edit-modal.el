@@ -3,6 +3,7 @@
 ;;; Code
 (leaf meow
   :doc "modal editing mode"
+  :url https://github.com/meow-edit/meow
   :straight t
   :require t
   :global-minor-mode meow-global-mode
