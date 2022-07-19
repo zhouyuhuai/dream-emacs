@@ -2,8 +2,13 @@
 ;;; Commentary:
 ;;; Code
 
-;; Load modal editing mode configuration
-(leaf dream-edit-modal :require t)
+(leaf dream-edit-modal
+  :doc "Load modal editing mode configuration"
+  :require t)
+
+(leaf dream-edit-input
+  :doc "Load emacs input configuration"
+  :require t)
 
 (provide 'dream-edit)
 ;;; dream-edit.el ends here.
