@@ -6,7 +6,7 @@
   :doc "Emacs input method"
   :url https://github.com/tumashu/pyim
   :straight t
-  :require t
+  :require (pyim pyim-cregexp-utils)
   :init
   (leaf pyim-basedict
     :doc "Pinyin grammar library"

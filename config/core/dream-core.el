@@ -5,6 +5,7 @@
 (leaf dream-core-basic :require t)
 
 (leaf company
+  :blackout ""
   :hook after-init-hook
   :straight t
   :config
