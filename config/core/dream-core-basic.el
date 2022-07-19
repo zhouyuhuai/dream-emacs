@@ -83,6 +83,13 @@
                                               extended-command-history)
               savehist-autosave-interval 300))
 
+(leaf paren
+  :tag "builtin"
+  :hook (after-init-hook . show-paren-mode)
+  :config
+  (setq show-paren-when-point-in-periphery t
+	show-paren-when-point-inside-paren t))
+
 (leaf gcmh
   :doc "The gc management"
   :blackout ""
