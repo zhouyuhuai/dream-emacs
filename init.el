@@ -16,3 +16,7 @@
 (leaf dream-ui
   :doc "Load ui module"
   :require t)
+
+(leaf dream-program
+  :doc "Load program module"
+  :require t)
