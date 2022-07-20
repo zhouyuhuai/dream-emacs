@@ -2,6 +2,10 @@
 ;;; Commentary:
 ;;; Code
 
+(leaf dream-ui-popup
+  :doc "Load popup user interface configuration"
+  :require t)
+
 (leaf dream-ui-modeline
   :doc "Load modeline configuration"
   :require t)
