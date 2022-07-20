@@ -5,8 +5,14 @@
 ;; Start up
 (load-file (expand-file-name "config/dream-startup.el" user-emacs-directory))
 
-;; Load core module
-(leaf dream-core :require t)
+(leaf dream-core
+  :doc "Load core module"
+  :require t)
 
-;; Load edit module
-(leaf dream-edit :require t)
+(leaf dream-edit
+  :doc "Load edit module"
+  :require t)
+
+(leaf dream-ui
+  :doc "Load ui module"
+  :require t)
