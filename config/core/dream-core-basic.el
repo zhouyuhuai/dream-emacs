@@ -1,4 +1,4 @@
-;;; dream-core-basic.el --- Core module basic configuration -*- lexical-binding: t; -*-
+;;; dream-core-basic.el --- Load core module basic configuration -*- lexical-binding: t; -*-
 ;;; Commentary:
 ;;; Code
 
