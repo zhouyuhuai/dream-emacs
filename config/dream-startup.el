@@ -8,11 +8,33 @@
 (when (< emacs-major-version 28)
   (error "This requires Emacs 28.1 and above!"))
 
-(defun add-subdirs-to-load-path (dir)
-  "Recursive add directories in DIR to `load-path'."
-  (let ((default-directory (file-name-as-directory dir)))
-    (add-to-list 'load-path dir)
-    (normal-top-level-add-subdirs-to-load-path)))
+(defun add-subdirs-to-load-path (search-dir)
+  (interactive)
+  (let* ((dir (file-name-as-directory search-dir)))
+    (dolist (subdir
+             ;; Filter unnecessary directories
+             (cl-remove-if
+              #'(lambda (subdir)
+                  (or
+                   ;; Remove file paths that are not directories
+                   (not (file-directory-p (concat dir subdir)))
+                   ;; Matches will also be removed
+                   (member subdir '("." ".." ; Linux current directory and parent directory
+				    "RCS" "CVS" "rcs" "cvs" ".git" ".github")))) ; Version Control directories
+              (directory-files dir)))
+      (let ((subdir-path (concat dir (file-name-as-directory subdir))))
+        ;; Only files with the corresponding format are added to the load path
+        (when (cl-some #'(lambda (subdir-file)
+                           (and (file-regular-p (concat subdir-path subdir-file))
+                                ;; .so .dll 
+                                (member (file-name-extension subdir-file) '("el" "so" "dll"))))
+                       (directory-files subdir-path))
+          
+          ;; t means add to the end of the load-path list
+          (add-to-list 'load-path subdir-path t))
+
+        ;; Recursion
+        (add-subdirs-to-load-path subdir-path)))))
 
 (defun emacs-base-path (path &optional base)
   "Return absolute PATH BASE 'user-emacs-directory."
