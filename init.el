@@ -9,6 +9,10 @@
   :doc "Load core module"
   :require t)
 
+(leaf dream-completion
+  :doc "Load completion module"
+  :require t)
+
 (leaf dream-edit
   :doc "Load edit module"
   :require t)
