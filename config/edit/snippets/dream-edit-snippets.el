@@ -11,6 +11,10 @@
   :pre-setq
   ;; Remove default ~/.emacs.d/snippets
   (yas-snippet-dirs . nil))
+  
+(leaf yasnippet-snippets
+  :straight t
+  :after yasnippet)
 
 (provide 'dream-edit-snippets)
 ;;; dream-edit-snippets.el ends here.
