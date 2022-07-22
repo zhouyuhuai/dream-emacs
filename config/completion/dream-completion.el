@@ -5,8 +5,8 @@
 (leaf dream-completion-ivy
   :doc "Load ivy configuration"
   :require t
-  :init
-  (setq +dream-completion-ivy-prescient t))
+  :pre-setq
+  (+dream-completion-ivy-prescient . t))
 
 (provide 'dream-completion)
 ;;; dream-completion.el ends here.
