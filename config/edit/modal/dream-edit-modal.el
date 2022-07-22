@@ -6,7 +6,7 @@
   :url https://github.com/meow-edit/meow
   :straight t
   :require t
-  :global-minor-mode meow-global-mode
+  :hook (after-init-hook . meow-global-mode)
   :init
   (defun meow-setup ()
     (setq meow-cheatsheet-layout meow-cheatsheet-layout-qwerty)
