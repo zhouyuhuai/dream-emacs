@@ -10,5 +10,9 @@
   :doc "Load emacs input configuration"
   :require t)
 
+(leaf dream-edit-snippets
+  :doc "Load snippets configuration"
+  :require t)
+
 (provide 'dream-edit)
 ;;; dream-edit.el ends here.

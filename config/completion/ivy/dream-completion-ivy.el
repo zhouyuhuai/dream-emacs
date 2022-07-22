@@ -75,9 +75,24 @@
 	    (counsel-search . 2)
 	    (t              . 3))))
   :config
+  ;; The default sorter is much to slow and the default for `ivy-sort-max-size'
+  ;; is way too big (30,000). Turn it down so big repos affect project
+  ;; navigation less.
+  (setq ivy-sort-max-size 7500)
   (setq ivy-height 17
 	ivy-wrap t
-	ivy-fixed-height-minibuffer t))
+	ivy-fixed-height-minibuffer t
+	ivy-read-action-format-function #'ivy-read-action-format-columns
+	;; don't show recent files in switch-buffer
+        ivy-use-virtual-buffers nil
+        ;; ...but if that ever changes, show their full path
+        ivy-virtual-abbreviate 'full
+        ;; don't quit minibuffer on delete-error
+        ivy-on-del-error-function #'ignore
+        ;; enable ability to select prompt (alternative to `ivy-immediate-done')
+        ivy-use-selectable-prompt t)
+  (with-eval-after-load 'yasnippet
+    (add-hook 'yas-prompt-function #'+ivy-yas-prompt-fn)))
 
 (leaf counsel
   :doc "a collection of Ivy-enhanced versions of common Emacs commands."
