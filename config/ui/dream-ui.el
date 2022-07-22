@@ -6,6 +6,10 @@
   :doc "Load popup user interface configuration"
   :require t)
 
+(leaf dream-ui-themes
+  :doc "Load themes configuration"
+  :require t)
+
 (leaf dream-ui-modeline
   :doc "Load modeline configuration"
   :require t)
