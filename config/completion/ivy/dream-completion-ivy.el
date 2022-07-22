@@ -66,10 +66,10 @@
 	   ;; Ignore order for non-fuzzy searches by default
 	   #'ivy--regex-ignore-order)))
     (setq ivy-re-builders-alist
-	  `((counsel-rg . ,standard-search-fn)
-	    (swiper     . ,standard-search-fn)
+	  `((counsel-rg         . ,standard-search-fn)
+	    (swiper             . ,standard-search-fn)
 	    (swiper-isearch     . ,standard-search-fn)
-	    (t          . ,alt-search-fn))
+	    (t                  . ,alt-search-fn))
 	  ivy-more-chars-alist
 	  '((counsel-rg     . 1)
 	    (counsel-search . 2)
